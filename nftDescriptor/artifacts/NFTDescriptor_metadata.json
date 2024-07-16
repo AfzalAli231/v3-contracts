@@ -1,0 +1,265 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "quoteTokenAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "baseTokenAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "quoteTokenSymbol",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "baseTokenSymbol",
+								"type": "string"
+							},
+							{
+								"internalType": "uint8",
+								"name": "quoteTokenDecimals",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "baseTokenDecimals",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "flipRatio",
+								"type": "bool"
+							},
+							{
+								"internalType": "int24",
+								"name": "tickLower",
+								"type": "int24"
+							},
+							{
+								"internalType": "int24",
+								"name": "tickUpper",
+								"type": "int24"
+							},
+							{
+								"internalType": "int24",
+								"name": "tickCurrent",
+								"type": "int24"
+							},
+							{
+								"internalType": "int24",
+								"name": "tickSpacing",
+								"type": "int24"
+							},
+							{
+								"internalType": "uint24",
+								"name": "fee",
+								"type": "uint24"
+							},
+							{
+								"internalType": "address",
+								"name": "poolAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct NFTDescriptor.ConstructTokenURIParams",
+						"name": "params",
+						"type": "tuple"
+					}
+				],
+				"name": "constructTokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"remix/nftDescriptor/nftDescriptor.sol": "NFTDescriptor"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"remix/nftDescriptor/BitMath.sol": {
+			"keccak256": "0x82e425066110aac05ed8a9fc90f9ee85142b6f434769447e49d4438a8d9fcd82",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://77a97078bc992c18c59cb61e07fa4632c8a26b6babf00f3b16eabb5dcaa953b4",
+				"dweb:/ipfs/QmTj15ufLWk6AxedSVXBcLp5cYf2DCJAeDi94cVemCkm54"
+			]
+		},
+		"remix/nftDescriptor/FullMath.sol": {
+			"keccak256": "0x50e87f7a3197525d1c6f7e04290060e848677c8a4e86c554bc6ace4a4d0d476d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3874093a6b37d8e68f9475a91f8eb0a1c808cb6153c84cfe6c37909505a4d24e",
+				"dweb:/ipfs/QmUqGpQqvSHX4SwUvcBCs9g4ZhR9JPhgD3615oUigAhtjj"
+			]
+		},
+		"remix/nftDescriptor/HexStrings.sol": {
+			"keccak256": "0x1b0acfad20d5e2dd18efa41a6152c4abd6f098d5e4b966804693ad948257e257",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a003caab7492ceff165d1e3af5a0860bc272900c9f34d00902e520acd62d9d0f",
+				"dweb:/ipfs/QmUx2V7kL5fMnScgSzaZyLfbGTcsE2Kjmf2RU2CwtQ6oVV"
+			]
+		},
+		"remix/nftDescriptor/IPixpelSwapV3Pool.sol": {
+			"keccak256": "0x248925b0c8cae1f85825da0b9ef0888bf4972e86f52ea7ded10bbfd75ba4288d",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://b15ced5d6bb65ae226d8c7160aea6be882a873b43f816af453ba9cec3fe44fbe",
+				"dweb:/ipfs/QmfR25596GUDgZ7JHiXiakadgvmWHEZ3AkGRze3c8A1Fxs"
+			]
+		},
+		"remix/nftDescriptor/IPixpelSwapV3PoolActions.sol": {
+			"keccak256": "0x147e96e5c7e6934fffd0f4dccb32310f66a05ae7254561f776d7f45566f4f948",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://362035f24769d2e85ad208dcb876eb0a612974ddf1786ac3f893bc5e9166c954",
+				"dweb:/ipfs/QmTiQYo1TVWtvSYMDpATSKtLDPijqVH9BsrCJU7tKteAfx"
+			]
+		},
+		"remix/nftDescriptor/IPixpelSwapV3PoolDerivedState.sol": {
+			"keccak256": "0x01cedebe463c6136b961007f4eb5f37741ca809160bbcb2addea1cb837009ba4",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://1691948ba0f8eb53f3a8f277f485d5caa10d6ca58e70fe746306a487cf440a55",
+				"dweb:/ipfs/QmQCCBP4pfo4dJoB9PA7FGaancDCiGModZ5QERuiQ5cEJ5"
+			]
+		},
+		"remix/nftDescriptor/IPixpelSwapV3PoolEvents.sol": {
+			"keccak256": "0x1d28839ae15a8923fad9c0a3fab4b929b1636d2897132c9129c9d9f35a0f7b4a",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://810a6e617b6cf8b8b1d8c52f8e12b13319fc0ae09b1bcf86f8494ad1bb5e814b",
+				"dweb:/ipfs/QmT82o96BCpaob2HSXPTFf4uvBY3tF1WJaeJsZ84SvLFxx"
+			]
+		},
+		"remix/nftDescriptor/IPixpelSwapV3PoolImmutables.sol": {
+			"keccak256": "0x66041a9d125b09f205ef3b3a9b3eb76751c5c141e5c22f1eda67eb3b477b832a",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://c15096240606d8d5ae17508e25659db326a20e29310ab0b44b2aae28bbffe3a3",
+				"dweb:/ipfs/QmTDq43Gsg1oUNkP5Hgj9B1NLZgorSN64TRUvrugxXJ4hi"
+			]
+		},
+		"remix/nftDescriptor/IPixpelSwapV3PoolOwnerActions.sol": {
+			"keccak256": "0xd3b9532990e15ff2fadddb7f5bce992fdca8acff5942c3c6998530c562626330",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://d9a0f0122ff4c7df79af96507dac75c0a04149e4eb782deb27ff413e11ba395a",
+				"dweb:/ipfs/Qmd5U2meXgZ1GuRBab1VmvbY8beMb3cZmE2mTS1HNAuSSE"
+			]
+		},
+		"remix/nftDescriptor/IPixpelSwapV3PoolState.sol": {
+			"keccak256": "0x0aa2c84ae47f9dadad5d5f03e31adcd70f32cc1c9c73473234c3850bfa2e968f",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://47d36432fcf83b98bced5740be938f853bc80dbcbb1c87a4fc5ff925951c2689",
+				"dweb:/ipfs/QmSup4KXEvh6Nd274HW1qc26v57krumGpeMnpQ1pJVnrXY"
+			]
+		},
+		"remix/nftDescriptor/NFTSVG.sol": {
+			"keccak256": "0xb382d633666ae97317dff019e80cc90c9a1a17fc8eb2caef32738d4d7e7da6ee",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://2b7b07c3f6f1c801207e48c228f178e26971b4bddc70430e385a47054b38759c",
+				"dweb:/ipfs/QmdM6UNS7jx5EybwY2eS94zy7yJctc3JS3P3d6yScHhKDw"
+			]
+		},
+		"remix/nftDescriptor/SafeMath.sol": {
+			"keccak256": "0x36d9cd071bd9940d5d037102f5ba45465b7611bc399c13d520707570757a8a8e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://96dde04088c2cd9ec4982b14c9e57c9a3aaf02ca0983207f5f2da98e9fd1ae54",
+				"dweb:/ipfs/QmVb2d6mwg6Y79kHYT3yxNuXyYQcyUq93YcNCom3A1RDfi"
+			]
+		},
+		"remix/nftDescriptor/SignedSafeMath.sol": {
+			"keccak256": "0xdafe60a42220d4a0c705e93e145c08cd89128c33fb400ece74db150130bd64fd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c81c18761474e4e391f1bdac4970b17b1a8e21fc3c19509dbdff9a9614a808c2",
+				"dweb:/ipfs/QmRTDJ86ZBcPjHABSLMgdMPDXJNVdPyAMRKgw4HNamVWiy"
+			]
+		},
+		"remix/nftDescriptor/String.sol": {
+			"keccak256": "0x7085b0eb76337ab5fb942edc391002f6a6452f83ec88aa60ed83451c1a88ad80",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cba3ada7b1c9a78c3915331200a004d9704eb4224551f0c92ee65f0d41793625",
+				"dweb:/ipfs/QmWZTSj7KdUGhkfcbNEfhcNEAVyBwvd5bsgJ88JAokuJEk"
+			]
+		},
+		"remix/nftDescriptor/TickMath.sol": {
+			"keccak256": "0xda8c2c0b12d2976acfd364453ba5f5bf0117ba3c91175ee9e1067d3fb26944d9",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://3f3d2d7c2723c91830c74d96292f28fc1cfe28d388cdb9c1a5ebadb4c2b96f81",
+				"dweb:/ipfs/QmYU4wk8MEm33wVWR38LoncvR7b8PP1mLuGBKX3dUpYJVE"
+			]
+		},
+		"remix/nftDescriptor/base64.sol": {
+			"keccak256": "0xcad2073f56d4e9396db406d83feccacaa8f7da8e9a72daa116c565d691933b2f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://eb4afa06e50009ae2ea601fd16f305178c6e115abf3816a7448b154dd183dd4c",
+				"dweb:/ipfs/QmUJgFb8zVgDuLiGvTsLBwXM7KAjRJPmzJGxzyjRyU96y9"
+			]
+		},
+		"remix/nftDescriptor/nftDescriptor.sol": {
+			"keccak256": "0xf2c50210a54ada4bc88d06ea1426d9cdbf6e4a2fd16b4743d000497eef2af10c",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://c085979dfb70caf05b0642cb764dc8c67654fcf751121864337a2c974f34568f",
+				"dweb:/ipfs/QmTgvteUzXJRKcqpEf4xZ2g6vazm8qZ9KtienrXTvRNBc5"
+			]
+		}
+	},
+	"version": 1
+}

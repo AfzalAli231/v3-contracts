@@ -1,0 +1,1989 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_factory",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_WETH9",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_tokenDescriptor_",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "approved",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "ApprovalForAll",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					}
+				],
+				"name": "Collect",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "liquidity",
+						"type": "uint128"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					}
+				],
+				"name": "DecreaseLiquidity",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "liquidity",
+						"type": "uint128"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					}
+				],
+				"name": "IncreaseLiquidity",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "DOMAIN_SEPARATOR",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "PERMIT_TYPEHASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount0Owed",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount1Owed",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "PixpelSwapV3MintCallback",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "WETH9",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "baseURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "recipient",
+								"type": "address"
+							},
+							{
+								"internalType": "uint128",
+								"name": "amount0Max",
+								"type": "uint128"
+							},
+							{
+								"internalType": "uint128",
+								"name": "amount1Max",
+								"type": "uint128"
+							}
+						],
+						"internalType": "struct INonfungiblePositionManager.CollectParams",
+						"name": "params",
+						"type": "tuple"
+					}
+				],
+				"name": "collect",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token0",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token1",
+						"type": "address"
+					},
+					{
+						"internalType": "uint24",
+						"name": "fee",
+						"type": "uint24"
+					},
+					{
+						"internalType": "uint160",
+						"name": "sqrtPriceX96",
+						"type": "uint160"
+					}
+				],
+				"name": "createAndInitializePoolIfNecessary",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "pool",
+						"type": "address"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint128",
+								"name": "liquidity",
+								"type": "uint128"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount0Min",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount1Min",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deadline",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct INonfungiblePositionManager.DecreaseLiquidityParams",
+						"name": "params",
+						"type": "tuple"
+					}
+				],
+				"name": "decreaseLiquidity",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "factory",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getApproved",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount0Desired",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount1Desired",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount0Min",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount1Min",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deadline",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct INonfungiblePositionManager.IncreaseLiquidityParams",
+						"name": "params",
+						"type": "tuple"
+					}
+				],
+				"name": "increaseLiquidity",
+				"outputs": [
+					{
+						"internalType": "uint128",
+						"name": "liquidity",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					}
+				],
+				"name": "isApprovedForAll",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "token0",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "token1",
+								"type": "address"
+							},
+							{
+								"internalType": "uint24",
+								"name": "fee",
+								"type": "uint24"
+							},
+							{
+								"internalType": "int24",
+								"name": "tickLower",
+								"type": "int24"
+							},
+							{
+								"internalType": "int24",
+								"name": "tickUpper",
+								"type": "int24"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount0Desired",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount1Desired",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount0Min",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount1Min",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "recipient",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deadline",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct INonfungiblePositionManager.MintParams",
+						"name": "params",
+						"type": "tuple"
+					}
+				],
+				"name": "mint",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint128",
+						"name": "liquidity",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "data",
+						"type": "bytes[]"
+					}
+				],
+				"name": "multicall",
+				"outputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "results",
+						"type": "bytes[]"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "permit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "positions",
+				"outputs": [
+					{
+						"internalType": "uint96",
+						"name": "nonce",
+						"type": "uint96"
+					},
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token0",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token1",
+						"type": "address"
+					},
+					{
+						"internalType": "uint24",
+						"name": "fee",
+						"type": "uint24"
+					},
+					{
+						"internalType": "int24",
+						"name": "tickLower",
+						"type": "int24"
+					},
+					{
+						"internalType": "int24",
+						"name": "tickUpper",
+						"type": "int24"
+					},
+					{
+						"internalType": "uint128",
+						"name": "liquidity",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint256",
+						"name": "feeGrowthInside0LastX128",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "feeGrowthInside1LastX128",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint128",
+						"name": "tokensOwed0",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "tokensOwed1",
+						"type": "uint128"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "refundETH",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "selfPermit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonce",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "expiry",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "selfPermitAllowed",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonce",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "expiry",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "selfPermitAllowedIfNecessary",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "selfPermitIfNecessary",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "setApprovalForAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountMinimum",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					}
+				],
+				"name": "sweepToken",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenByIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenOfOwnerByIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountMinimum",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					}
+				],
+				"name": "unwrapWETH9",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"DOMAIN_SEPARATOR()": {
+					"returns": {
+						"_0": "The domain seperator used in encoding of permit signature"
+					}
+				},
+				"PixpelSwapV3MintCallback(uint256,uint256,bytes)": {
+					"details": "In the implementation you must pay the pool tokens owed for the minted liquidity. The caller of this method must be checked to be a PixpelSwapV3Pool deployed by the canonical PixpelSwapV3Factory.",
+					"params": {
+						"amount0Owed": "The amount of token0 due to the pool for the minted liquidity",
+						"amount1Owed": "The amount of token1 due to the pool for the minted liquidity",
+						"data": "Any data passed through by the caller via the IPixpelSwapV3PoolActions#mint call"
+					}
+				},
+				"approve(address,uint256)": {
+					"details": "See {IERC721-approve}."
+				},
+				"balanceOf(address)": {
+					"details": "See {IERC721-balanceOf}."
+				},
+				"baseURI()": {
+					"details": "Returns the base URI set via {_setBaseURI}. This will be automatically added as a prefix in {tokenURI} to each token's URI, or to the token ID if no specific URI is set for that token ID."
+				},
+				"burn(uint256)": {
+					"params": {
+						"tokenId": "The ID of the token that is being burned"
+					}
+				},
+				"collect((uint256,address,uint128,uint128))": {
+					"params": {
+						"params": "tokenId The ID of the NFT for which tokens are being collected, recipient The account that should receive the tokens, amount0Max The maximum amount of token0 to collect, amount1Max The maximum amount of token1 to collect"
+					},
+					"returns": {
+						"amount0": "The amount of fees collected in token0",
+						"amount1": "The amount of fees collected in token1"
+					}
+				},
+				"createAndInitializePoolIfNecessary(address,address,uint24,uint160)": {
+					"details": "This method can be bundled with others via IMulticall for the first action (e.g. mint) performed against a pool",
+					"params": {
+						"fee": "The fee amount of the v3 pool for the specified token pair",
+						"sqrtPriceX96": "The initial square root price of the pool as a Q64.96 value",
+						"token0": "The contract address of token0 of the pool",
+						"token1": "The contract address of token1 of the pool"
+					},
+					"returns": {
+						"pool": "Returns the pool address based on the pair of tokens and fee, will return the newly created pool address if necessary"
+					}
+				},
+				"decreaseLiquidity((uint256,uint128,uint256,uint256,uint256))": {
+					"params": {
+						"params": "tokenId The ID of the token for which liquidity is being decreased, amount The amount by which liquidity will be decreased, amount0Min The minimum amount of token0 that should be accounted for the burned liquidity, amount1Min The minimum amount of token1 that should be accounted for the burned liquidity, deadline The time by which the transaction must be included to effect the change"
+					},
+					"returns": {
+						"amount0": "The amount of token0 accounted to the position's tokens owed",
+						"amount1": "The amount of token1 accounted to the position's tokens owed"
+					}
+				},
+				"getApproved(uint256)": {
+					"details": "Returns the account approved for `tokenId` token. Requirements: - `tokenId` must exist."
+				},
+				"increaseLiquidity((uint256,uint256,uint256,uint256,uint256,uint256))": {
+					"params": {
+						"params": "tokenId The ID of the token for which liquidity is being increased, amount0Desired The desired amount of token0 to be spent, amount1Desired The desired amount of token1 to be spent, amount0Min The minimum amount of token0 to spend, which serves as a slippage check, amount1Min The minimum amount of token1 to spend, which serves as a slippage check, deadline The time by which the transaction must be included to effect the change"
+					},
+					"returns": {
+						"amount0": "The amount of token0 to acheive resulting liquidity",
+						"amount1": "The amount of token1 to acheive resulting liquidity",
+						"liquidity": "The new liquidity amount as a result of the increase"
+					}
+				},
+				"isApprovedForAll(address,address)": {
+					"details": "See {IERC721-isApprovedForAll}."
+				},
+				"mint((address,address,uint24,int24,int24,uint256,uint256,uint256,uint256,address,uint256))": {
+					"details": "Call this when the pool does exist and is initialized. Note that if the pool is created but not initialized a method does not exist, i.e. the pool is assumed to be initialized.",
+					"params": {
+						"params": "The params necessary to mint a position, encoded as `MintParams` in calldata"
+					},
+					"returns": {
+						"amount0": "The amount of token0",
+						"amount1": "The amount of token1",
+						"liquidity": "The amount of liquidity for this position",
+						"tokenId": "The ID of the token that represents the minted position"
+					}
+				},
+				"multicall(bytes[])": {
+					"details": "The `msg.value` should not be trusted for any method callable from multicall.",
+					"params": {
+						"data": "The encoded function data for each of the calls to make to this contract"
+					},
+					"returns": {
+						"results": "The results from each of the calls passed in via data"
+					}
+				},
+				"name()": {
+					"details": "See {IERC721Metadata-name}."
+				},
+				"ownerOf(uint256)": {
+					"details": "See {IERC721-ownerOf}."
+				},
+				"permit(address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"params": {
+						"deadline": "The deadline timestamp by which the call must be mined for the approve to work",
+						"r": "Must produce valid secp256k1 signature from the holder along with `v` and `s`",
+						"s": "Must produce valid secp256k1 signature from the holder along with `r` and `v`",
+						"spender": "The account that is being approved",
+						"tokenId": "The ID of the token that is being approved for spending",
+						"v": "Must produce valid secp256k1 signature from the holder along with `r` and `s`"
+					}
+				},
+				"positions(uint256)": {
+					"details": "Throws if the token ID is not valid.",
+					"params": {
+						"tokenId": "The ID of the token that represents the position"
+					},
+					"returns": {
+						"fee": "The fee associated with the pool",
+						"feeGrowthInside0LastX128": "The fee growth of token0 as of the last action on the individual position",
+						"feeGrowthInside1LastX128": "The fee growth of token1 as of the last action on the individual position",
+						"liquidity": "The liquidity of the position",
+						"nonce": "The nonce for permits",
+						"operator": "The address that is approved for spending",
+						"tickLower": "The lower end of the tick range for the position",
+						"tickUpper": "The higher end of the tick range for the position",
+						"token0": "The address of the token0 for a specific pool",
+						"token1": "The address of the token1 for a specific pool",
+						"tokensOwed0": "The uncollected amount of token0 owed to the position as of the last computation",
+						"tokensOwed1": "The uncollected amount of token1 owed to the position as of the last computation"
+					}
+				},
+				"refundETH()": {
+					"details": "Useful for bundling with mint or increase liquidity that uses ether, or exact output swaps that use ether for the input amount"
+				},
+				"safeTransferFrom(address,address,uint256)": {
+					"details": "See {IERC721-safeTransferFrom}."
+				},
+				"safeTransferFrom(address,address,uint256,bytes)": {
+					"details": "See {IERC721-safeTransferFrom}."
+				},
+				"selfPermit(address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"details": "The `owner` is always msg.sender and the `spender` is always address(this).",
+					"params": {
+						"deadline": "A timestamp, the current blocktime must be less than or equal to this timestamp",
+						"r": "Must produce valid secp256k1 signature from the holder along with `v` and `s`",
+						"s": "Must produce valid secp256k1 signature from the holder along with `r` and `v`",
+						"token": "The address of the token spent",
+						"v": "Must produce valid secp256k1 signature from the holder along with `r` and `s`",
+						"value": "The amount that can be spent of token"
+					}
+				},
+				"selfPermitAllowed(address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"details": "The `owner` is always msg.sender and the `spender` is always address(this)",
+					"params": {
+						"expiry": "The timestamp at which the permit is no longer valid",
+						"nonce": "The current nonce of the owner",
+						"r": "Must produce valid secp256k1 signature from the holder along with `v` and `s`",
+						"s": "Must produce valid secp256k1 signature from the holder along with `r` and `v`",
+						"token": "The address of the token spent",
+						"v": "Must produce valid secp256k1 signature from the holder along with `r` and `s`"
+					}
+				},
+				"selfPermitAllowedIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"details": "The `owner` is always msg.sender and the `spender` is always address(this) Can be used instead of #selfPermitAllowed to prevent calls from failing due to a frontrun of a call to #selfPermitAllowed.",
+					"params": {
+						"expiry": "The timestamp at which the permit is no longer valid",
+						"nonce": "The current nonce of the owner",
+						"r": "Must produce valid secp256k1 signature from the holder along with `v` and `s`",
+						"s": "Must produce valid secp256k1 signature from the holder along with `r` and `v`",
+						"token": "The address of the token spent",
+						"v": "Must produce valid secp256k1 signature from the holder along with `r` and `s`"
+					}
+				},
+				"selfPermitIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"details": "The `owner` is always msg.sender and the `spender` is always address(this). Can be used instead of #selfPermit to prevent calls from failing due to a frontrun of a call to #selfPermit",
+					"params": {
+						"deadline": "A timestamp, the current blocktime must be less than or equal to this timestamp",
+						"r": "Must produce valid secp256k1 signature from the holder along with `v` and `s`",
+						"s": "Must produce valid secp256k1 signature from the holder along with `r` and `v`",
+						"token": "The address of the token spent",
+						"v": "Must produce valid secp256k1 signature from the holder along with `r` and `s`",
+						"value": "The amount that can be spent of token"
+					}
+				},
+				"setApprovalForAll(address,bool)": {
+					"details": "See {IERC721-setApprovalForAll}."
+				},
+				"supportsInterface(bytes4)": {
+					"details": "See {IERC165-supportsInterface}. Time complexity O(1), guaranteed to always use less than 30 000 gas."
+				},
+				"sweepToken(address,uint256,address)": {
+					"details": "The amountMinimum parameter prevents malicious contracts from stealing the token from users",
+					"params": {
+						"amountMinimum": "The minimum amount of token required for a transfer",
+						"recipient": "The destination address of the token",
+						"token": "The contract address of the token which will be transferred to `recipient`"
+					}
+				},
+				"symbol()": {
+					"details": "See {IERC721Metadata-symbol}."
+				},
+				"tokenByIndex(uint256)": {
+					"details": "See {IERC721Enumerable-tokenByIndex}."
+				},
+				"tokenOfOwnerByIndex(address,uint256)": {
+					"details": "See {IERC721Enumerable-tokenOfOwnerByIndex}."
+				},
+				"totalSupply()": {
+					"details": "See {IERC721Enumerable-totalSupply}."
+				},
+				"transferFrom(address,address,uint256)": {
+					"details": "See {IERC721-transferFrom}."
+				},
+				"unwrapWETH9(uint256,address)": {
+					"details": "The amountMinimum parameter prevents malicious contracts from stealing WETH9 from users.",
+					"params": {
+						"amountMinimum": "The minimum amount of WETH9 to unwrap",
+						"recipient": "The address receiving ETH"
+					}
+				}
+			},
+			"stateVariables": {
+				"_nextId": {
+					"details": "The ID of the next token that will be minted. Skips 0"
+				},
+				"_nextPoolId": {
+					"details": "The ID of the next pool that is used for the first time. Skips 0"
+				},
+				"_poolIds": {
+					"details": "IDs of pools assigned by this contract"
+				},
+				"_positions": {
+					"details": "The token ID position data"
+				},
+				"_tokenDescriptor": {
+					"details": "The address of the token descriptor contract, which handles generating token URIs for position tokens"
+				}
+			},
+			"title": "NFT positions",
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"Collect(uint256,address,uint256,uint256)": {
+					"notice": "Emitted when tokens are collected for a position NFT"
+				},
+				"DecreaseLiquidity(uint256,uint128,uint256,uint256)": {
+					"notice": "Emitted when liquidity is decreased for a position NFT"
+				},
+				"IncreaseLiquidity(uint256,uint128,uint256,uint256)": {
+					"notice": "Emitted when liquidity is increased for a position NFT"
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"DOMAIN_SEPARATOR()": {
+					"notice": "The domain separator used in the permit signature"
+				},
+				"PERMIT_TYPEHASH()": {
+					"notice": "The permit typehash used in the permit signature"
+				},
+				"PixpelSwapV3MintCallback(uint256,uint256,bytes)": {
+					"notice": "Called to `msg.sender` after minting liquidity to a position from IPixpelSwapV3Pool#mint."
+				},
+				"burn(uint256)": {
+					"notice": "Burns a token ID, which deletes it from the NFT contract. The token must have 0 liquidity and all tokens must be collected first."
+				},
+				"collect((uint256,address,uint128,uint128))": {
+					"notice": "Collects up to a maximum amount of fees owed to a specific position to the recipient"
+				},
+				"createAndInitializePoolIfNecessary(address,address,uint24,uint160)": {
+					"notice": "Creates a new pool if it does not exist, then initializes if not initialized"
+				},
+				"decreaseLiquidity((uint256,uint128,uint256,uint256,uint256))": {
+					"notice": "Decreases the amount of liquidity in a position and accounts it to the position"
+				},
+				"increaseLiquidity((uint256,uint256,uint256,uint256,uint256,uint256))": {
+					"notice": "Increases the amount of liquidity in a position, with tokens paid by the `msg.sender`"
+				},
+				"mint((address,address,uint24,int24,int24,uint256,uint256,uint256,uint256,address,uint256))": {
+					"notice": "Creates a new position wrapped in a NFT"
+				},
+				"multicall(bytes[])": {
+					"notice": "Call multiple functions in the current contract and return the data from all of them if they all succeed"
+				},
+				"permit(address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"notice": "Approve of a specific token ID for spending by spender via signature"
+				},
+				"positions(uint256)": {
+					"notice": "Returns the position information associated with a given token ID."
+				},
+				"refundETH()": {
+					"notice": "Refunds any ETH balance held by this contract to the `msg.sender`"
+				},
+				"selfPermit(address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"notice": "Permits this contract to spend a given token from `msg.sender`"
+				},
+				"selfPermitAllowed(address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"notice": "Permits this contract to spend the sender's tokens for permit signatures that have the `allowed` parameter"
+				},
+				"selfPermitAllowedIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"notice": "Permits this contract to spend the sender's tokens for permit signatures that have the `allowed` parameter"
+				},
+				"selfPermitIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"notice": "Permits this contract to spend a given token from `msg.sender`"
+				},
+				"sweepToken(address,uint256,address)": {
+					"notice": "Transfers the full amount of a token held by this contract to recipient"
+				},
+				"unwrapWETH9(uint256,address)": {
+					"notice": "Unwraps the contract's WETH9 balance and sends it to recipient as ETH."
+				}
+			},
+			"notice": "Wraps PixpelSwap V3 positions in the ERC721 non-fungible token interface",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"remix/positionManager/NonFungiblePositionManager.sol": "NonfungiblePositionManager"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"remix/positionManager/Address.sol": {
+			"keccak256": "0x292e71c523a7d3579b814198a3e161e77410d48b4bc025b9d7efa42cd6ba70d4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4cb20cac3fbbf051c339230d99b35349703bd4f946a40066e0eaa903ab33ae2d",
+				"dweb:/ipfs/Qmeae7ixa2AwtEpwhTTVxuf2UJyheJEdDKzHyvrWoyHNpL"
+			]
+		},
+		"remix/positionManager/BlockTimestamp.sol": {
+			"keccak256": "0x3ae32ed1278e146e7a4129d12b81f29628f06ce8ccf0f3c6871bee7b46d5a743",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://e1d1b54080bd7db17b6c6e8f55b13df5d731fc341cc710e8c8d40a48f83f30c6",
+				"dweb:/ipfs/QmWeNVxZGu8ED6j5NPdhYauuu9jDBtri7j41GFvfk2DCcc"
+			]
+		},
+		"remix/positionManager/ChainId.sol": {
+			"keccak256": "0x530832feda64b3186cb8697f01d8ac8c4f900fd939264eeef60f61f190910a9c",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://b05d42069c366f43abbd0e65c0813aabf1de144b7d715f1db41093570bc82ea0",
+				"dweb:/ipfs/Qmf3GQ8fe6PyVTXWyThvt1scywc5sf8wUWqDYGNY1xYqEy"
+			]
+		},
+		"remix/positionManager/Context.sol": {
+			"keccak256": "0xd3e88da8695a1d63936f7bbf3b3441056c44d167e679a80f9a1b5ffafb11fad9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://587786c556944a0a561b5f5ab16716263b42ca8dd6cc1102b75f4c4d1a802325",
+				"dweb:/ipfs/QmU9Y13bBrVy2uE4TiHfPSTFQXV2BeUnxrMo135zRy7wJT"
+			]
+		},
+		"remix/positionManager/ERC165.sol": {
+			"keccak256": "0x82213659db9835bed5914daf60a24c30fbfb6702b5e7e6b7f72604f7f473e25a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://117d7fef0e5691dc865c270ee62b880c57a5a4891fad219d6ad2376c7f3f0d72",
+				"dweb:/ipfs/QmfFPCVLn3VWgBEf5SRX8QYk7xXFUNyhYmvM9fA3s9PCRz"
+			]
+		},
+		"remix/positionManager/ERC721.sol": {
+			"keccak256": "0xd425aafb49352423bed96cd6b591412a4633b5b077cbc4be82b667bcb3db056f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://333770c513e94a5c58e55a352ef704f2c15686e900b182f2b69bd2e4db5df309",
+				"dweb:/ipfs/QmXX2hY37vb5BANemx2ef3gNMxWhkoTd6vpy434s2vkoGk"
+			]
+		},
+		"remix/positionManager/ERC721Permit.sol": {
+			"keccak256": "0x3885cadd5f689c41a5444adcd6dd59c9984d8a25e3e5272fe7efd17f0d7a0eec",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://18678e124e1e2fa5e135fe71a560b68ae093f49aa6277cf6746e3b7b21dd6494",
+				"dweb:/ipfs/QmZo1vaL5VjimykXU5HefZuANXbQYYLFqCEzq3rVK64gFP"
+			]
+		},
+		"remix/positionManager/EnumerableMap.sol": {
+			"keccak256": "0x60fa7ebbcdd9fea16807cd107d52de239d93d66601c646fa269aca46fb719b4f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fed89e947edc6f3795deab4a9ef5d6050e72a89c25d5fb6460108da3085cc23d",
+				"dweb:/ipfs/QmWkr3xht6sC2KYAL57ppgT5eRDHS11eSdYFJHZyEx7c1h"
+			]
+		},
+		"remix/positionManager/EnumerableSet.sol": {
+			"keccak256": "0x9484c59e9088c5b6b465d335ecb8b0b719ff152cae7d1b1ebe58057bf7d2061b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b7d726c7dd115baea00b8f4d892754e87ebc0e1ddf6bd8207d398fd9d51824a0",
+				"dweb:/ipfs/QmTqsTSCuK4NJfvgTBJG5WKs1aw5U8Q2Uymonv6cWbpr2p"
+			]
+		},
+		"remix/positionManager/FixedPoint128.sol": {
+			"keccak256": "0x2d1f4f73ae0d8f0a210b8d30084659b57c56ac8f2f96011fca36f00a6d417178",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://2ba88933f16cd2df398e19c6ad227268f83c03081b70d243c97116d2ed9bc241",
+				"dweb:/ipfs/QmTUGxdh8snzEM9VrTSS47StCg9VVWvvLJtJeNnMTFY4xb"
+			]
+		},
+		"remix/positionManager/FixedPoint96.sol": {
+			"keccak256": "0x0ba8a9b95a956a4050749c0158e928398c447c91469682ca8a7cc7e77a7fe032",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://186d3b528866065a5856f96d2aeec698efa99f8da913e9adf34f8cc296cc993d",
+				"dweb:/ipfs/QmUAiMvtAQp8c9dy57bqJYzG7hkb1uChiPaQmt264skoqP"
+			]
+		},
+		"remix/positionManager/FullMath.sol": {
+			"keccak256": "0x50e87f7a3197525d1c6f7e04290060e848677c8a4e86c554bc6ace4a4d0d476d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3874093a6b37d8e68f9475a91f8eb0a1c808cb6153c84cfe6c37909505a4d24e",
+				"dweb:/ipfs/QmUqGpQqvSHX4SwUvcBCs9g4ZhR9JPhgD3615oUigAhtjj"
+			]
+		},
+		"remix/positionManager/IERC1271.sol": {
+			"keccak256": "0xe3bdda6d6eb037ebc716f77fd62e8d0538e0f993244b81d1841ad350abe819c4",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://a590686c495aed0b8193299adef58041dafc70b386920a0a0500dba0140a6ba9",
+				"dweb:/ipfs/QmVutbdDzdS3AHqdztVoLnbUxiJARTbbA1rrWXxRHsuj7a"
+			]
+		},
+		"remix/positionManager/IERC165.sol": {
+			"keccak256": "0xd61a443a53abd0baa197924989d2b6485f6978b044b90a35bea73be42b4c4205",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3adbc56f68d73bbc0f7a50dacd161229d151cc2b4af29cd9bf8ecf456055350c",
+				"dweb:/ipfs/QmX8L8fF6yDGzsXHS8CjAwytEU5ySHu2QGa4ky9jCupYeY"
+			]
+		},
+		"remix/positionManager/IERC20.sol": {
+			"keccak256": "0x00fb1283b76f511d82653d28fac26b68adf01efaa513053ff59d25540649cf6d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://719f079e69c545373606187449b96ab6e3ab71313f951b3b30034af6872d283b",
+				"dweb:/ipfs/QmezpNXUP2Hkw5YcDqPUdqPNHgzC1eyZTk81icDN3kg8ru"
+			]
+		},
+		"remix/positionManager/IERC20Permit.sol": {
+			"keccak256": "0x06c9dc4dd6a147ac767d8e456a33cb038c31f0534e2ac3fe3f57dc67cff3cca9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://dc4e1b3efbfd983a4611aae72b514a65f2b9394647b6a2a4547ee8afb2246500",
+				"dweb:/ipfs/QmRMM9PXzXi9B3xwbpkW7TMdDVS6BSY6FWazCU2RiXjLhh"
+			]
+		},
+		"remix/positionManager/IERC20PermitAllowed.sol": {
+			"keccak256": "0xa90ee8c07da59b7bc1846c04451142167dbda20c6f2cdbfd1c40ffdf04be6a28",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://73447dfc5f5f035c10bc100e36809f13c9eeb30ac0c0a186e311080b397e4d24",
+				"dweb:/ipfs/QmazR9ZUp9UTVQHcmjdG77fbnHrjpV9rc4ujYJQ4e5aPiB"
+			]
+		},
+		"remix/positionManager/IERC721.sol": {
+			"keccak256": "0xfcd5cc2039dc5d9532f35bb81c0c92534110ff4e26440c5d76ef60dca2bebe53",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ba0235e281a65ffbd681a2040f40df729c3aff9f714796216a43838ae272ecdd",
+				"dweb:/ipfs/QmPPYVfUTui594erihDVHzi13LbxFvYZ7nv6mttKGJ95tG"
+			]
+		},
+		"remix/positionManager/IERC721Enumerable.sol": {
+			"keccak256": "0x3622a870664dd8ef270e824f5b9ce90f24c5152ade1fae9e50a01173ac3b8567",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3b8f9376d7711f0379478d50e2222f6ee78ba0bc2ff67ebc585dc09c3dfe2a3a",
+				"dweb:/ipfs/QmRWzXc4fbvR5VNcQBUEB8taa6mhGoYEdmjstfYWChFGuE"
+			]
+		},
+		"remix/positionManager/IERC721Metadata.sol": {
+			"keccak256": "0xf85d791fefb8fd3345e58210432122ba10ad1ba6115880fa81575bf7b138506c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d015e53948ff9762eb2f194adf75dea59cf9907b7fe80771b5031464d4c2e554",
+				"dweb:/ipfs/QmX4goSb9dzAmuyyistFvbxVWvAJz8iQKhct3BPAbx7EcV"
+			]
+		},
+		"remix/positionManager/IERC721Permit.sol": {
+			"keccak256": "0x8202c42b2a15de8999e6731e29580f6fe60a4809056b0c430235058a5eb225a6",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://1d0b65b1d6fe32250fb21108f52e89c12e584f0868b7e71dbcddabb7ce72d15d",
+				"dweb:/ipfs/QmUDsQjvkg9TpBPcA15WGF9MaVXheUEHnoY3Hbc3tu1NL4"
+			]
+		},
+		"remix/positionManager/IERC721Receiver.sol": {
+			"keccak256": "0xf3a5f15b023c63eec672b731015796c948399022d5f0d5807fc87e22d4f272ae",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fbd83ab1b7afb1d4d5a2c032dbb3ca79b4a079736605c15d65547eb8021ab6f0",
+				"dweb:/ipfs/QmXmrzHfx1ChPW12TFKMPTbTnpTMXrwoxjPtwGM77CcJXn"
+			]
+		},
+		"remix/positionManager/IMulticall.sol": {
+			"keccak256": "0xfbecfc54f1547548dbf2559e4068c894eab332f060522a260edb5571a495c751",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://fed10f310429ec0077babe43a6f529af6ccc2d14cc1df244df00be47314de781",
+				"dweb:/ipfs/QmTckwFz3qdu4jLG7WQ2guEcScFUppZFmyDuDfQ91Z97KN"
+			]
+		},
+		"remix/positionManager/INonfungiblePositionManager.sol": {
+			"keccak256": "0x511d5d2e358e69a7472eea6ad2f3388390adb15733aa39b1018685005041c269",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://e7f4c540bc539cae6bca1756e8c843f05d32efb182821b80c809dea0cbfed351",
+				"dweb:/ipfs/QmbCBqa6VMsp5ZnVAPfCeVYUh8hULQgv8kd5uMPnD1N3Gx"
+			]
+		},
+		"remix/positionManager/INonfungibleTokenPositionDescriptor.sol": {
+			"keccak256": "0xd2296f97840d781e3358965b3a3ebad63fa30dbcf0e60419ffa90724af506855",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://a97a0a5f58d42f07b389c8060906b2d9fce4bb7a50682469d3627d330a802cde",
+				"dweb:/ipfs/QmaWsvu74LpUtVmw8cb62Ego7wJPVXYccgWyBFmwxxxMXW"
+			]
+		},
+		"remix/positionManager/IPeripheryImmutableState.sol": {
+			"keccak256": "0x19dd1d215f6af0d2d8962b650a71a617a2cd602cfc2fde9196384238f6bdbd7f",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://2a85dfe71108f1370e3e28dcb1e8e378511c05f1a222151398f447645cedbd48",
+				"dweb:/ipfs/QmWgfFr95zaUYrwrHc5BLiyaRgmZ83k2TXftm8S8nV5say"
+			]
+		},
+		"remix/positionManager/IPeripheryPayments.sol": {
+			"keccak256": "0x8bfcd97285f6b3b0aa3b58f822d365d5548e8a5ad36623b0bcabb25c0ee56a3e",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://9cc4fca10a9c074bebb826176d3690a661c581eb0246426f68aa5f7d06074d77",
+				"dweb:/ipfs/QmUw3MP9AuVZFStCtb8SRYdayYmvvLD9sCCAgGP5wZkLnL"
+			]
+		},
+		"remix/positionManager/IPixpelSwapV3Factory.sol": {
+			"keccak256": "0x505da9181545f1f4ab7256a595972d6fd5de748db33163ba2fdcd41cd4173f75",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://78ca02bdfc162f88537d23a1868eb9e4eee3b06a29d2c5b5cdcc3e0c061fda9f",
+				"dweb:/ipfs/QmQPAfVPpZeLkVVtcUWycD4wKm2SysAWtDqZSgMXN6Mjvc"
+			]
+		},
+		"remix/positionManager/IPixpelSwapV3MintCallback.sol": {
+			"keccak256": "0x4da15fafd3043d9623bf483e50f6e41457f9e1e17826fd7828885ee20dfc1fec",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://1d381bee8a1c08556af1b113815fb9bcabc950e72b330bc0779a05a316feaf0a",
+				"dweb:/ipfs/QmcFpxySN4DX26iaMsPbdyE7jjBdDYLf7b6wJnGKjLdXeW"
+			]
+		},
+		"remix/positionManager/IPixpelSwapV3Pool.sol": {
+			"keccak256": "0x248925b0c8cae1f85825da0b9ef0888bf4972e86f52ea7ded10bbfd75ba4288d",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://b15ced5d6bb65ae226d8c7160aea6be882a873b43f816af453ba9cec3fe44fbe",
+				"dweb:/ipfs/QmfR25596GUDgZ7JHiXiakadgvmWHEZ3AkGRze3c8A1Fxs"
+			]
+		},
+		"remix/positionManager/IPixpelSwapV3PoolActions.sol": {
+			"keccak256": "0x147e96e5c7e6934fffd0f4dccb32310f66a05ae7254561f776d7f45566f4f948",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://362035f24769d2e85ad208dcb876eb0a612974ddf1786ac3f893bc5e9166c954",
+				"dweb:/ipfs/QmTiQYo1TVWtvSYMDpATSKtLDPijqVH9BsrCJU7tKteAfx"
+			]
+		},
+		"remix/positionManager/IPixpelSwapV3PoolDerivedState.sol": {
+			"keccak256": "0x01cedebe463c6136b961007f4eb5f37741ca809160bbcb2addea1cb837009ba4",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://1691948ba0f8eb53f3a8f277f485d5caa10d6ca58e70fe746306a487cf440a55",
+				"dweb:/ipfs/QmQCCBP4pfo4dJoB9PA7FGaancDCiGModZ5QERuiQ5cEJ5"
+			]
+		},
+		"remix/positionManager/IPixpelSwapV3PoolEvents.sol": {
+			"keccak256": "0x1d28839ae15a8923fad9c0a3fab4b929b1636d2897132c9129c9d9f35a0f7b4a",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://810a6e617b6cf8b8b1d8c52f8e12b13319fc0ae09b1bcf86f8494ad1bb5e814b",
+				"dweb:/ipfs/QmT82o96BCpaob2HSXPTFf4uvBY3tF1WJaeJsZ84SvLFxx"
+			]
+		},
+		"remix/positionManager/IPixpelSwapV3PoolImmutables.sol": {
+			"keccak256": "0x66041a9d125b09f205ef3b3a9b3eb76751c5c141e5c22f1eda67eb3b477b832a",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://c15096240606d8d5ae17508e25659db326a20e29310ab0b44b2aae28bbffe3a3",
+				"dweb:/ipfs/QmTDq43Gsg1oUNkP5Hgj9B1NLZgorSN64TRUvrugxXJ4hi"
+			]
+		},
+		"remix/positionManager/IPixpelSwapV3PoolOwnerActions.sol": {
+			"keccak256": "0xd3b9532990e15ff2fadddb7f5bce992fdca8acff5942c3c6998530c562626330",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://d9a0f0122ff4c7df79af96507dac75c0a04149e4eb782deb27ff413e11ba395a",
+				"dweb:/ipfs/Qmd5U2meXgZ1GuRBab1VmvbY8beMb3cZmE2mTS1HNAuSSE"
+			]
+		},
+		"remix/positionManager/IPixpelSwapV3PoolState.sol": {
+			"keccak256": "0x0aa2c84ae47f9dadad5d5f03e31adcd70f32cc1c9c73473234c3850bfa2e968f",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://47d36432fcf83b98bced5740be938f853bc80dbcbb1c87a4fc5ff925951c2689",
+				"dweb:/ipfs/QmSup4KXEvh6Nd274HW1qc26v57krumGpeMnpQ1pJVnrXY"
+			]
+		},
+		"remix/positionManager/IPoolInitializer.sol": {
+			"keccak256": "0x96000078991369e525f5e9c93d520a38b9013a25618378bb74a48632b71f4e8d",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://4ba5d9333db76101414a3834f0d73a8f835e2886dee317abe8caf0c5119399f2",
+				"dweb:/ipfs/QmfMkfneYxybb563oZQpmXqpesU3dMG1j2y5GKgpHvR19C"
+			]
+		},
+		"remix/positionManager/ISelfPermit.sol": {
+			"keccak256": "0xcfc79d2b3647344e007b14469fb90318c40152b8fc614feb19d18bcee1e40a8c",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://8b75035f165f6d7b5173bcc0dc046517ddd1379a7935567b08dc8fd93ebdc5bf",
+				"dweb:/ipfs/QmRBMPgf8mCLvo5rtC8xA1T7pKMjXpbxNs8K2UuSLiT3mh"
+			]
+		},
+		"remix/positionManager/IWETH9.sol": {
+			"keccak256": "0x860b4ebcd6f0acb4c2b92df9ee200910cc97c26fadde4aeca4dd5334cfcad432",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://4d1a2fe902404c241400838afa797de6873d9c302f25226976cbb679b8246128",
+				"dweb:/ipfs/QmdpogjhDfwhA59hVWVzdNYR6SJ3gTVfFVDup9tsRU3EA3"
+			]
+		},
+		"remix/positionManager/LiquidityAmounts.sol": {
+			"keccak256": "0x6d112c0a596282f78f843ad7e7b7441a0b6e208e9a940e8ee4342ab47727ad61",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://dad5c2a796f76c83e7e80810eacca76962eae33115b0f2b40eccf5e8fa6d2ec3",
+				"dweb:/ipfs/QmXZvMSoYgJnNEpbA7YY8MZTcUmz9VMux85xzHfHBYnGEW"
+			]
+		},
+		"remix/positionManager/LiquidityManagement.sol": {
+			"keccak256": "0x8dc40c7c9c98e48e92e0df3f0649abbe40ab036184b452dd6c2bf96a257b54d4",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://d01df785cdb695aed09157bf8b14f4091b1eb3a518e5861c3b623348a458f2f0",
+				"dweb:/ipfs/QmSq3AcSspAKQQ8EYr7UVnCTDswX2tnnXRiPYXzZT9hYZB"
+			]
+		},
+		"remix/positionManager/Multicall.sol": {
+			"keccak256": "0x26f90ce59bdfde95125fb6d1e818089d80d70f430571965a06c8f5e44edeac84",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://14bf57164b42f7405c6db731f553109b7fa36e3ac8e44160f7043d23ec4292e6",
+				"dweb:/ipfs/QmTkbxxFuWrfXwhpQWsxCuTjhGLWnRTdgqsxA3xjTMVnZU"
+			]
+		},
+		"remix/positionManager/NonFungiblePositionManager.sol": {
+			"keccak256": "0x5242ddd7abb85420101ef91e21ad15a19a54f27971127d0af0c326421a9db88f",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://25f981e81e755ab6ccc34753cf5df5a95f3236fba3f72f9528850b992ed3227c",
+				"dweb:/ipfs/QmYkwMaCGjHRHVSAvrSMZjqBaMkJ2gRDdfcHLg7yGP1v7J"
+			]
+		},
+		"remix/positionManager/PeripheryImmutableState.sol": {
+			"keccak256": "0x95315801c3658a7cdd997223be4217c34d481d35b8fdd07ad2fde1f92f0dc2f0",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://4ab6c812184ceebfb822ba4f13429bc7c3619debf62a7c08697bfa1ab2d2e395",
+				"dweb:/ipfs/QmRs7CLbqQLa4nYHWUFnBVcRkNFjRae799XPc2Ws1XUXUf"
+			]
+		},
+		"remix/positionManager/PeripheryPayments.sol": {
+			"keccak256": "0xe338a1fadc147303e0706243644255c3af3f9c88e9542ce5859292a289ae7c5e",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://0943dab74ff069def8ed247d3ced7618a034d68dbf537f80b04bf488e3e6c921",
+				"dweb:/ipfs/QmPdMwsccaue8vsH6VFbrPhQKKqHDJM4yBf1Unt8xoXT4q"
+			]
+		},
+		"remix/positionManager/PeripheryValidation.sol": {
+			"keccak256": "0x93f9c86b400a77d4735c8687a8a94d4ffcd8ba2f5f50ff14bf1fe33bf6c4cff0",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://0ccc97905fef43f52f8c98ad92e7fa09b81f88dbdc3f1ad7f3f9de57223cc457",
+				"dweb:/ipfs/QmQw8ibeQgRWCv1hcpfV3ewByWGwag9Qx7JzWR9nR38u75"
+			]
+		},
+		"remix/positionManager/PoolInitializer.sol": {
+			"keccak256": "0xe0071dcc43364c4fa71462a2687af030406542ff0fdebf1a5e3c0a09afcfc10b",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://4fe8331ab418449c6a79445eeb8b9eb6975e1620754c25439c0fde4f88421212",
+				"dweb:/ipfs/QmcTAUhDPuqgR6ffyGTTYYi16wrBdWy2AUUT6PeJnZ8Tpv"
+			]
+		},
+		"remix/positionManager/PositionKey.sol": {
+			"keccak256": "0xfb3b4869ca498cd81c1e605041b4ab2e48e681f2f2c0861c9632a8e58ac49acc",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://16879dc83257a38c814bc5dd32b3ddb944d1378ea87ef953db010c352b2acfa3",
+				"dweb:/ipfs/Qme9PWaXDx5k5CYvMRe9652oExwWQQXtvyiXbdZysLcQzw"
+			]
+		},
+		"remix/positionManager/SafeMath.sol": {
+			"keccak256": "0x36d9cd071bd9940d5d037102f5ba45465b7611bc399c13d520707570757a8a8e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://96dde04088c2cd9ec4982b14c9e57c9a3aaf02ca0983207f5f2da98e9fd1ae54",
+				"dweb:/ipfs/QmVb2d6mwg6Y79kHYT3yxNuXyYQcyUq93YcNCom3A1RDfi"
+			]
+		},
+		"remix/positionManager/SelfPermit.sol": {
+			"keccak256": "0xece9d8917536f099428ec3e8c2d5bb4e5a464a198e58455a5eb42e0037378cc1",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://7a4120d516e630dddbbe46d5c02c18543252fe25dbe9e6636548ccfd7c35bcfa",
+				"dweb:/ipfs/QmXwYtjrWZwoYEv1DK41ZzD5o67uGwBEyowgUUiQCe6ym9"
+			]
+		},
+		"remix/positionManager/String.sol": {
+			"keccak256": "0x7085b0eb76337ab5fb942edc391002f6a6452f83ec88aa60ed83451c1a88ad80",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cba3ada7b1c9a78c3915331200a004d9704eb4224551f0c92ee65f0d41793625",
+				"dweb:/ipfs/QmWZTSj7KdUGhkfcbNEfhcNEAVyBwvd5bsgJ88JAokuJEk"
+			]
+		},
+		"remix/positionManager/TickMath.sol": {
+			"keccak256": "0xda8c2c0b12d2976acfd364453ba5f5bf0117ba3c91175ee9e1067d3fb26944d9",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://3f3d2d7c2723c91830c74d96292f28fc1cfe28d388cdb9c1a5ebadb4c2b96f81",
+				"dweb:/ipfs/QmYU4wk8MEm33wVWR38LoncvR7b8PP1mLuGBKX3dUpYJVE"
+			]
+		},
+		"remix/positionManager/TransferHelper.sol": {
+			"keccak256": "0x0b1b6942b0b284e8a7a3153849b5635791c96bceda85c59c582bda9edac88a01",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://b38c65f2e6239c6b74a3a61c8b2e6a45ed45340f8060cdf19e207f6ab8c4af57",
+				"dweb:/ipfs/QmPbvNdGV2vMxqn6L8F3gACvBdUxtcpGBRWjFkRfgB2qx1"
+			]
+		}
+	},
+	"version": 1
+}
